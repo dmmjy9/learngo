@@ -1,8 +1,9 @@
-package basic
+package main
 
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"os"
 	"strconv"
 )
@@ -21,7 +22,11 @@ func printFile(filename string) {
 	if err != nil {
 		panic(err)
 	}
-	scanner := bufio.NewScanner(file)
+	printFileContents(file)
+}
+
+func printFileContents(reader io.Reader) {
+	scanner := bufio.NewScanner(reader)
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
 	}
@@ -39,6 +44,7 @@ func main() {
 		convertToBin(13), // 1101
 		convertToBin(72387885),
 	)
-	printFile("abc.txt")
-	forever()
+
+	printFile("basic/loop/abc.txt")
+	// forever()
 }
