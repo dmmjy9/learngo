@@ -38,6 +38,8 @@ func main() {
 	root.postOrder()
 	fmt.Println()
 
+	root.Traverse()
+
 	//var baseRoot *tree.Node
 	//baseRoot := &root		不能把子类的指针赋值给父类
 }
