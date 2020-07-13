@@ -42,4 +42,13 @@ func main() {
 
 	//var baseRoot *tree.Node
 	//baseRoot := &root		不能把子类的指针赋值给父类
+
+	c := root.TraverseWithChannel()
+	maxNode := 0
+	for node := range c {
+		if node.Value > maxNode {
+			maxNode = node.Value
+		}
+	}
+	fmt.Println("Max node value:", maxNode)
 }
